@@ -1,6 +1,6 @@
 <template>
-  <div class="pt-48 md:px-24 px-12 text-gblue">
-    <div id="hero" class="flex flex-col justify-center py-12">
+  <div class="text-gblue">
+    <div id="hero" class="flex md:px-24 px-12 flex-col justify-center">
       <h1 class="text-4xl md:text-6xl font-semibold leading-none">Passion Tours</h1>
       <p class="text-2xl md:text-4xl mt-6">
         Airport transfer
@@ -19,31 +19,73 @@
         </button>
       </div>
     </div>
+    <div class="my-16 md:px-24 px-12 py-12 w-full bg-gblue text-white flex flex-col items-center">
+      <h2 class="text-4xl">Über uns</h2>
+      <p class="text-lg text-center mt-4 font-body font-light">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        Officia, voluptatibus ad alias fugit corporis tenetur perferendis illum mollitia exercitationem consequatur, quod sint.
+        Dolorem blanditiis eligendi minima vero libero assumenda id.
+      </p>
+    </div>
+    <div class="md:px-24 px-12 mt-24">
+      <CityDesc city="Salzburg" direction="true">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Impedit temporibus distinctio harum!
+        Magnam iure id quas a deserunt consectetur laboriosam ratione repellat optio adipisci,
+        ullam dolorem aspernatur, magni necessitatibus? Eius!
+      </CityDesc>
+      <CityDesc city="Wien">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Impedit temporibus distinctio harum!
+        Magnam iure id quas a deserunt consectetur laboriosam ratione repellat optio adipisci,
+        ullam dolorem aspernatur, magni necessitatibus? Eius!
+      </CityDesc>
+      <CityDesc city="Bratislava" direction="true">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Impedit temporibus distinctio harum!
+        Magnam iure id quas a deserunt consectetur laboriosam ratione repellat optio adipisci,
+        ullam dolorem aspernatur, magni necessitatibus? Eius!
+      </CityDesc>
+    </div>
 
-    <div id="about-us" class>
-      <div class="w-full flex items-center">
-        <div>
-          <h2 class="text-4xl m-2">Salzburg</h2>
-          <div class="bg-gblue h-2 w-16 ml-2"></div>
-          <p class="mt-4 text-lg mx-2">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Vero maiores architecto soluta officia quia fugiat perferendis, perspiciatis error placeat.
-            Commodi amet doloremque tempora non nobis animi earum dolore aut sit!
-          </p>
+    <div class="w-full bg-gray-200 md:px-24 p-12 mt-12">
+      <div class="mt-8"></div>
+      <div id="carousel" class="flex">
+        <!---->
+        <div class="w-1/4 my-4 mr-6 w-48 flex flex-col justify-center">
+          <h3 class="text-4xl font-semibold">Unsere Touren</h3>
+          <p class="text-2xl font-medium">Einfach scrollen & clicken!</p>
         </div>
-        <img class="w-1/2" src="~assets/img/img1.png" alt />
+        <!-- -->
       </div>
     </div>
+
+    <div id="filler" class="bg-gray-400"></div>
   </div>
 </template>
 
 <script>
-export default {}
+import CityDesc from '../components/CityDesc'
+
+export default {
+  name: 'Home',
+  components: {
+    CityDesc: CityDesc
+  },
+  methods: {
+    getImg(img) {
+      return require(`@/assets/img/${img}`)
+    }
+  }
+}
 </script>
 
 <style>
-#hero,
-#about-us {
-  height: 50vh;
+#hero {
+  height: 90vh;
+}
+#carousel,
+#filler {
+  height: 60vh;
 }
 </style>
