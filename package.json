@@ -1,0 +1,25 @@
+{
+  "name": "vue-pt-website",
+  "version": "1.0.0",
+  "description": "My polished Nuxt.js project",
+  "author": "Max",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "serve": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "heroku-postbuild": "npm run build"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.3.6",
+    "nuxt": "^2.0.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^1.0.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "prettier": "^1.16.4"
+  }
+}
