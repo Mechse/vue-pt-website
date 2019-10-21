@@ -50,9 +50,8 @@ export default {
       type: 'carousel',
       perView: 3,
       breakpoints: {
-        1024: {
-          perView: 2,
-          peek: 0
+        800: {
+          perView: 1
         },
         600: {
           perView: 1
