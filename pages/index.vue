@@ -21,7 +21,7 @@
     </div>
     <div class="my-16 md:px-24 px-12 py-12 w-full bg-gblue text-white flex flex-col items-center">
       <h2 class="text-4xl">Über uns</h2>
-      <p class="text-lg text-center mt-4 font-body font-light">
+      <p class="text-lg text-center mt-4 font-body font-light my-6">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit.
         Officia, voluptatibus ad alias fugit corporis tenetur perferendis illum mollitia exercitationem consequatur, quod sint.
         Dolorem blanditiis eligendi minima vero libero assumenda id.
@@ -58,20 +58,22 @@
       <Carousel id="tours" v-bind:tours="toursInfo"></Carousel>
     </div>
 
-    <div id="filler" class="bg-gray-400"></div>
+    <Contact></Contact>
   </div>
 </template>
 
 <script>
 import CityDesc from '../components/CityDesc'
 import Carousel from '../components/Carousel'
+import Contact from '../components/Contact'
 import * as Tours from '../static/tours'
 
 export default {
   name: 'Home',
   components: {
-    CityDesc: CityDesc,
-    Carousel
+    CityDesc,
+    Carousel,
+    Contact
   },
   methods: {
     getImg(img) {
@@ -91,10 +93,6 @@ export default {
   height: 90vh;
 }
 #tours {
-  height: 60vh;
-}
-
-#filler {
   height: 60vh;
 }
 
