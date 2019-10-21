@@ -4,13 +4,21 @@
       <img class="w-48 ml-8 my-4" src="~assets/img/logos/logo.svg" alt />
 
       <div class="ml-6 hover:text-lblue" v-for="(link, index) in links" :key="index">
-        <a class="text-lg font-semibold" :href="link.href">{{ link.display }}</a>
+        <a
+          class="text-lg font-semibold"
+          :href="link.href"
+          @click.prevent="scrollTo(link.href)"
+        >{{ link.display }}</a>
       </div>
       <!-- Contact Button -->
       <div
         class="ml-6 py-1 px-2 border border-gblue rounded-lg shadow-lg hover:shadow-blg hover:text-lblue hover:border-lblue"
       >
-        <a class="text-lg font-semibold" href="#">Kontakt</a>
+        <a
+          class="text-lg font-semibold"
+          href="#contact"
+          @click.prevent="scrollTo('#contact')"
+        >Kontakt</a>
       </div>
     </div>
 
@@ -58,6 +66,7 @@
           class="pl-4 py-4 w-full cursor-pointer active:bg-blue-200"
           v-for="(link, index) in links"
           :key="index"
+          @click.prevent="scrollTo(link.href)"
         >
           <a class="text-lg" :href="link.href">{{ link.display }}</a>
         </div>
@@ -107,6 +116,11 @@ export default {
     },
     navToggle() {
       this.menuControl = this.menuControl === 'hidden' ? 'flex' : 'hidden'
+    },
+    scrollTo(selector) {
+      this.menuControl = 'hidden'
+      let el = document.querySelector(selector).offsetTop - 150
+      window.scroll({ top: el, behavior: 'smooth' })
     }
   },
   mounted() {},

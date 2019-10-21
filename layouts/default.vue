@@ -18,9 +18,10 @@ export default {
   data() {
     return {
       Links: [
-        { href: '#', display: 'Team' },
-        { href: '#', display: 'About' },
-        { href: '#', display: 'Vienna' }
+        { href: '#hero', display: 'Home' },
+        { href: '#about-us h2', display: 'About Us' },
+        { href: '#places', display: 'Orte' },
+        { href: '#tours', display: 'Touren' }
       ]
     }
   }

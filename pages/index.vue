@@ -10,16 +10,18 @@
         <button
           class="w-48 max-w-md mt-4 sm:mt-0 btn-filled bg-lblue hover:border-lblue hover:text-lblue flex justify-center"
           href="#"
+          @click.prevent="scrollTo('#contact')"
         >Kontakt</button>
 
         <button
-          class="mt-4 w-64 sm:mt-0 sm:ml-4 btn-filled bg-gblue hover:border-gblue hover:text-gblue flex justify-center"
-        >
-          <a href="#">Anfrage</a>
-        </button>
+          class="hidden mt-4 w-64 sm:mt-0 sm:ml-4 btn-filled bg-gblue hover:border-gblue hover:text-gblue flex justify-center"
+        >Anfrage</button>
       </div>
     </div>
-    <div class="my-16 md:px-24 px-12 py-12 w-full bg-gblue text-white flex flex-col items-center">
+    <div
+      id="about-us"
+      class="my-16 md:px-24 px-12 py-12 w-full bg-gblue text-white flex flex-col items-center"
+    >
       <h2 class="text-4xl">Über uns</h2>
       <p class="text-lg text-center mt-4 font-body font-light my-6">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -27,7 +29,7 @@
         Dolorem blanditiis eligendi minima vero libero assumenda id.
       </p>
     </div>
-    <div class="md:px-24 px-12 mt-24">
+    <div id="places" class="md:px-24 px-12 mt-24">
       <CityDesc city="Salzburg" direction="true">
         Lorem ipsum dolor sit amet consectetur adipisicing elit.
         Impedit temporibus distinctio harum!
@@ -47,8 +49,7 @@
         ullam dolorem aspernatur, magni necessitatibus? Eius!
       </CityDesc>
     </div>
-
-    <div class="w-full flex flex-col bg-gray-200 md:px-24 p-12 mt-12">
+    <div id="tours" class="w-full flex flex-col bg-gray-200 md:px-24 p-12 mt-12">
       <div class="md:mt-8"></div>
       <!---->
       <div class="my-4 mr-6 flex flex-col justify-center">
@@ -57,8 +58,7 @@
       <!-- -->
       <Carousel id="tours" v-bind:tours="toursInfo"></Carousel>
     </div>
-
-    <Contact></Contact>
+    <Contact id="contact"></Contact>
   </div>
 </template>
 
@@ -78,6 +78,10 @@ export default {
   methods: {
     getImg(img) {
       return require(`@/assets/img/${img}`)
+    },
+    scrollTo(selector) {
+      let el = document.querySelector(selector).offsetTop - 150
+      window.scroll({ top: el, behavior: 'smooth' })
     }
   },
   data() {
