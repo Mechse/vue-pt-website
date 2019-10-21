@@ -48,16 +48,14 @@
       </CityDesc>
     </div>
 
-    <div class="w-full bg-gray-200 md:px-24 p-12 mt-12">
-      <div class="mt-8"></div>
-      <div id="carousel" class="flex">
-        <!---->
-        <div class="w-1/4 my-4 mr-6 w-48 flex flex-col justify-center">
-          <h3 class="text-4xl font-semibold">Unsere Touren</h3>
-          <p class="text-2xl font-medium">Einfach scrollen & clicken!</p>
-        </div>
-        <!-- -->
+    <div class="w-full flex flex-col bg-gray-200 md:px-24 p-12 mt-12">
+      <div class="md:mt-8"></div>
+      <!---->
+      <div class="my-4 mr-6 flex flex-col justify-center">
+        <h3 class="text-4xl font-semibold">Unsere Touren</h3>
       </div>
+      <!-- -->
+      <Carousel id="tours" v-bind:tours="toursInfo"></Carousel>
     </div>
 
     <div id="filler" class="bg-gray-400"></div>
@@ -66,26 +64,42 @@
 
 <script>
 import CityDesc from '../components/CityDesc'
+import Carousel from '../components/Carousel'
+import * as Tours from '../static/tours'
 
 export default {
   name: 'Home',
   components: {
-    CityDesc: CityDesc
+    CityDesc: CityDesc,
+    Carousel
   },
   methods: {
     getImg(img) {
       return require(`@/assets/img/${img}`)
     }
+  },
+  data() {
+    return {
+      toursInfo: Tours
+    }
   }
 }
 </script>
 
-<style>
+<style scoped>
 #hero {
   height: 90vh;
 }
-#carousel,
+#tours {
+  height: 60vh;
+}
+
 #filler {
   height: 60vh;
+}
+
+#carousel div.glide__track,
+div.glide__track ul {
+  height: 100% important;
 }
 </style>
