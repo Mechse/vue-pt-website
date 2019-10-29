@@ -4,9 +4,9 @@
       <ul class="glide__slides h-full">
         <li class="glide__slide" v-for="tour in tours" :key="tour.title">
           <div
-            class="border-red-500 active:bg-blue-100 shadow-xl rounded-lg h-full relative bg-cover bg-center"
+            class="border-red-500 active:bg-blue-100 shadow-xl rounded-lg h-full relative bg-cover bg-center w-3/4 md:w-auto"
             :style="{
-                backgroundImage: `url(${getImg(tour.img)})`
+                backgroundImage: `url(${getImg(tour.img)})`,
             }"
           >
             <div></div>
