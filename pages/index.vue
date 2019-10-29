@@ -1,5 +1,7 @@
+// TODO dialog elements, dsgvo, impressum, logo
 <template>
   <div class="text-gblue">
+    <CookieBanner></CookieBanner>
     <div id="hero" class="flex md:px-24 px-12 flex-col justify-center">
       <h1 class="text-4xl md:text-6xl font-semibold leading-none">Passion Tours</h1>
       <p class="text-2xl md:text-4xl mt-6">
@@ -24,29 +26,28 @@
     >
       <h2 class="text-4xl">Über uns</h2>
       <p class="text-lg text-center mt-4 font-body font-light my-6">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-        Officia, voluptatibus ad alias fugit corporis tenetur perferendis illum mollitia exercitationem consequatur, quod sint.
-        Dolorem blanditiis eligendi minima vero libero assumenda id.
+        Unsere Firma besteht bereits seit 2004 und kann auf eine lange Erfahrung zurückgreifen.
+        Passion Tours möchten jedem die Möglichkeit bieten Sightseeing und Shopping nach ganz individuellen Wünschen zu gestalten. Mit uns erleben Sie einen ganz entspannten Tag das Tempo bestimmen Sie.
+        All unsere Touren sind private Touren je nach Personengröße fahren Sie mit einer unserer Mercedes-Limousinen inkl. Avantgardeausstattung.
+        Wir bieten außerdem exklusive Airport Transfers zum Fixpreis an.
+        Gerne erstellen wir für Sie maßgeschneiderte Touren und Ausflüge zu Ihren Wunschdestinationen.
       </p>
     </div>
     <div id="places" class="md:px-24 px-12 mt-24">
       <CityDesc city="Salzburg" direction="true">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Impedit temporibus distinctio harum!
-        Magnam iure id quas a deserunt consectetur laboriosam ratione repellat optio adipisci,
-        ullam dolorem aspernatur, magni necessitatibus? Eius!
+        Bei diesem Tagesausflug entführen wir Sie in das wunderschöne Salzburg.
+        Sie haben die Möglichkeit einige der beliebtesten Sehenswürdigkeiten wie Mozarts Geburtshaus, Schloss Mirabell und den Salzburger Dom zu besichtigen.
+        Unsere Touren sind jeden Tag verfügbar, die Abfahrtszeiten sprechen wir gerne mit Ihnen ab.
       </CityDesc>
       <CityDesc city="Wien">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Impedit temporibus distinctio harum!
-        Magnam iure id quas a deserunt consectetur laboriosam ratione repellat optio adipisci,
-        ullam dolorem aspernatur, magni necessitatibus? Eius!
+        Entdecken Sie unsere schöne Hauptstadt ganz entspannt in einer Mercedes Limousine und gewinnen Sie so einen tollen Überblick.
+        Ganz egal ob Sie mit einer Fahrt über die berühmte Ringstraße oder mit Schloss Schönbrunn starten möchten, wir richten uns nach Ihnen.
+        Unsere Touren sind jeden Tag verfügbar, die Abfahrtszeiten sprechen wir gerne mit Ihnen ab.
       </CityDesc>
       <CityDesc city="Bratislava" direction="true">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Impedit temporibus distinctio harum!
-        Magnam iure id quas a deserunt consectetur laboriosam ratione repellat optio adipisci,
-        ullam dolorem aspernatur, magni necessitatibus? Eius!
+        Die slowakische Hauptstadt liegt nur eine kurze Fahrt von Wien entfernt.
+        Erkunden Sie die nette Innenstadt, das Nationaltheater oder den Maximilianbrunnen wir stehen gerne beratend zur Seite und richten uns nach Ihren Wünschen.
+        Unsere Touren sind jeden Tag verfügbar, die Abfahrtszeiten sprechen wir gerne mit Ihnen ab.
       </CityDesc>
     </div>
     <div id="tours" class="w-full flex flex-col bg-gray-200 md:px-24 p-12 mt-12">
@@ -66,6 +67,7 @@
 import CityDesc from '../components/CityDesc'
 import Carousel from '../components/Carousel'
 import Contact from '../components/Contact'
+import CookieBanner from '../components/CookieBanner'
 import * as Tours from '../static/tours'
 
 export default {
@@ -73,7 +75,8 @@ export default {
   components: {
     CityDesc,
     Carousel,
-    Contact
+    Contact,
+    CookieBanner
   },
   methods: {
     getImg(img) {

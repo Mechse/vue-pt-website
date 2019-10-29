@@ -1,7 +1,7 @@
 <template>
   <nav :class="navClass" class="w-full flex items-center text-gblue">
     <div class="hidden md:flex items-center font-display">
-      <img class="w-48 ml-8 my-4" src="~assets/img/logos/logo.svg" alt />
+      <img class="w-20 ml-8 my-4" src="~assets/img/logos/logo.svg" alt />
 
       <div class="ml-6 hover:text-lblue" v-for="(link, index) in links" :key="index">
         <a
@@ -25,7 +25,7 @@
     <!-- MOBILE -->
     <div class="md:hidden flex flex-col w-full z-10">
       <div class="full-w flex flex-row justify-between bg-white">
-        <img class="w-48 ml-4 my-4" src="~assets/img/logos/logo.svg" alt />
+        <img class="w-20 ml-4 my-4" src="~assets/img/logos/logo.svg" alt />
         <!-- burger toogle part-->
         <div @click="navToggle" class="ml-4 flex items-center flex-shrink-0 text-white">
           <svg
@@ -118,9 +118,13 @@ export default {
       this.menuControl = this.menuControl === 'hidden' ? 'flex' : 'hidden'
     },
     scrollTo(selector) {
-      this.menuControl = 'hidden'
-      let el = document.querySelector(selector).offsetTop - 150
-      window.scroll({ top: el, behavior: 'smooth' })
+      if ($nuxt.$route.path === '/') {
+        this.menuControl = 'hidden'
+        let el = document.querySelector(selector).offsetTop - 150
+        window.scroll({ top: el, behavior: 'smooth' })
+      } else {
+        this.$router.push('/')
+      }
     }
   },
   mounted() {},

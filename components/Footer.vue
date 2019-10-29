@@ -11,15 +11,15 @@
     <div class="flex flex-row justify-center">
       <div class="h-20 w-1 bg-white mr-2"></div>
       <div class="flex flex-col">
-        <a href="#">Impressum</a>
-        <a href="#">Datenschutz</a>
+        <nuxt-link to="/impressum">Impressum</nuxt-link>
+        <nuxt-link to="/dsgvo">Datenschutz</nuxt-link>
       </div>
     </div>
     <div class="hidden sm:flex w-full justify-end">
-      <img src="@/assets/img/logos/logoW.svg" class="w-56" alt />
+      <img src="@/assets/img/logos/logoW.svg" class="w-20" alt />
     </div>
     <div class="w-full sm:hidden flex justify-center items-center mt-8">
-      <img src="@/assets/img/logos/logoW.svg" alt />
+      <img src="@/assets/img/logos/logoW.svg" class="w-32" alt />
     </div>
   </footer>
 </template>

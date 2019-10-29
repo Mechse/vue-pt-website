@@ -31,13 +31,19 @@
 </template>
 
 <script>
+import Modal from '../components/Modal'
 import '@glidejs/glide/dist/css/glide.core.min.css'
 import Glide from '@glidejs/glide'
 export default {
   name: 'Carousel',
   props: ['tours'],
+  components: {
+    Modal
+  },
   data() {
-    return {}
+    return {
+      hidden: true
+    }
   },
   methods: {
     getImg(img) {
@@ -45,23 +51,25 @@ export default {
     }
   },
   mounted() {
-    var glide = new Glide('#tours', {
-      focusAt: 'center',
-      type: 'carousel',
-      perView: 3,
-      breakpoints: {
-        800: {
-          perView: 1
+    if (process.client) {
+      var glide = new Glide('#tours', {
+        focusAt: 'center',
+        type: 'carousel',
+        perView: 3,
+        breakpoints: {
+          800: {
+            perView: 1
+          },
+          600: {
+            perView: 1
+          }
         },
-        600: {
-          perView: 1
-        }
-      },
-      startAt: 0,
-      gap: 25
-    })
+        startAt: 0,
+        gap: 25
+      })
 
-    glide.mount()
+      glide.mount()
+    }
   }
 }
 </script>
