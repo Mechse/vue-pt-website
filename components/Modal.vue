@@ -1,11 +1,20 @@
 <template>
   <div class="modal-backdrop z-20">
-    <div class="modal">
-      <slot name="header"></slot>
-
-      <slot name="body"></slot>
-
-      <slot name="footer"></slot>
+    <div class="modal w-5/6 p-4 rounded-lg" v-if="activeTour">
+      <div
+        v-if="activeTour.img"
+        class="w-full h-64 bg-cover bg-center rounded-lg"
+        :style="{
+                backgroundImage: `url(${getImg(activeTour.img)})`,
+            }"
+      ></div>
+      <h3 class="text-gblue text-3xl mt-4">{{ activeTour.title }}</h3>
+      <p class="font-body mt-4">{{ activeTour.desc }}</p>
+      <p class="text-lblue italic text-xl mt-4">{{ activeTour.price }} €</p>
+      <button
+        class="mt-4 btn-filled w-2/3 md:w-1/3 bg-lblue hover:border-lblue hover:text-lblue"
+        @click="$emit('hide-tour')"
+      >Close</button>
     </div>
   </div>
 </template>
@@ -13,7 +22,12 @@
 <script>
 export default {
   name: 'Modal',
-  props: ['tour']
+  props: ['activeTour'],
+  methods: {
+    getImg(img) {
+      return require(`@/assets/img/${img}`)
+    }
+  }
 }
 </script>
 

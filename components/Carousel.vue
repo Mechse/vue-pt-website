@@ -13,7 +13,10 @@
             <div class="absolute bottom-0 left-0 ml-4 mb-8">
               <h5 class="text-2xl text-white font-semibold">{{ tour.title }}</h5>
               <p class="text-xl text-white italic">Ab: {{ tour.price }} €</p>
-              <button class="btn-filled bg-lblue hover:border-lblue hover:text-lblue mt-2">Anfrage</button>
+              <button
+                @click="$emit('show-tour', tour)"
+                class="btn-filled bg-lblue hover:border-lblue hover:text-lblue mt-2"
+              >Anfrage</button>
             </div>
           </div>
         </li>

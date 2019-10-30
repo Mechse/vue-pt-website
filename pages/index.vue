@@ -1,7 +1,10 @@
-// TODO dialog elements, dsgvo, impressum, logo
+// TODO dialog elements, impressum, english version
 <template>
   <div class="text-gblue">
     <CookieBanner></CookieBanner>
+    <div :class="{hidden: modalHideClass}" v-if="activeTour">
+      <Modal v-on:hide-tour="hideModal()" :activeTour="activeTour"></Modal>
+    </div>
     <div id="hero" class="flex md:px-24 px-12 flex-col justify-center">
       <h1 class="text-4xl md:text-6xl font-semibold leading-none">Passion Tours</h1>
       <p class="text-2xl md:text-4xl mt-6">
@@ -57,7 +60,7 @@
         <h3 class="text-4xl font-semibold">Unsere Touren</h3>
       </div>
       <!-- -->
-      <Carousel id="tours" v-bind:tours="toursInfo"></Carousel>
+      <Carousel id="tours" v-bind:tours="toursInfo" v-on:show-tour="showModal($event)"></Carousel>
     </div>
     <Contact id="contact"></Contact>
   </div>
@@ -67,6 +70,7 @@
 import CityDesc from '../components/CityDesc'
 import Carousel from '../components/Carousel'
 import Contact from '../components/Contact'
+import Modal from '../components/Modal'
 import CookieBanner from '../components/CookieBanner'
 import * as Tours from '../static/tours'
 
@@ -76,7 +80,15 @@ export default {
     CityDesc,
     Carousel,
     Contact,
-    CookieBanner
+    CookieBanner,
+    Modal
+  },
+  data() {
+    return {
+      toursInfo: Tours,
+      activeTour: {},
+      modalHideClass: true
+    }
   },
   methods: {
     getImg(img) {
@@ -85,11 +97,14 @@ export default {
     scrollTo(selector) {
       let el = document.querySelector(selector).offsetTop - 150
       window.scroll({ top: el, behavior: 'smooth' })
-    }
-  },
-  data() {
-    return {
-      toursInfo: Tours
+    },
+    showModal(tour) {
+      this.modalHideClass = false
+      this.activeTour = tour
+    },
+    hideModal() {
+      this.modalHideClass = true
+      this.activeTour = {}
     }
   }
 }
@@ -100,9 +115,8 @@ export default {
   height: 90vh;
 }
 #tours {
-  height: 60vh;
+  height: 70vh;
 }
-
 #carousel div.glide__track,
 div.glide__track ul {
   height: 100% important;
