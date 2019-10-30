@@ -16,7 +16,7 @@
               <button
                 @click="$emit('show-tour', tour)"
                 class="btn-filled bg-lblue hover:border-lblue hover:text-lblue mt-2"
-              >Anfrage</button>
+              >Info</button>
             </div>
           </div>
         </li>

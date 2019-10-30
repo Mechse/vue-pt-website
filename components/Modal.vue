@@ -10,7 +10,11 @@
       ></div>
       <h3 class="text-gblue text-3xl mt-4">{{ activeTour.title }}</h3>
       <p class="font-body mt-4">{{ activeTour.desc }}</p>
-      <p class="text-lblue italic text-xl mt-4">{{ activeTour.price }} €</p>
+      <p
+        class="text-lblue italic text-xl mt-4"
+        v-for="price in activeTour.priceList"
+        :key="price"
+      >{{ price }} €</p>
       <button
         class="mt-4 btn-filled w-2/3 md:w-1/3 bg-lblue hover:border-lblue hover:text-lblue"
         @click="$emit('hide-tour')"
