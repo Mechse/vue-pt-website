@@ -1,52 +1,40 @@
 module.exports = [{
-    title: 'Wien Tour – Foto Wien',
-    desc: `Entdecken Sie unsere schöne Hauptstadt ganz entspannt in einer Mercedes Limousine und gewinnen Sie so einen tollen Überblick.
-    Ganz egal ob Sie mit einer Fahrt über die berühmte Ringstraße oder mit Schloss Schönbrunn starten möchten,
-    wir richten uns nach Ihnen.
-    Unsere Touren sind jeden Tag verfügbar,
-    die Abfahrtszeiten sprechen wir gerne mit Ihnen ab.
-    Die Wien Tour ist für 4 oder 6 Stunden buchbar,
-    falls Sie verlängern möchten ist dies gerne um 40 Euro pro weiterer Stunde möglich.
-    `,
+    title: 'Vienna City Tour',
+    desc: `Discover our beautiful capital totally relaxed in a Mercedes limousine and get a great overview.
+    No matter if you want to start with a ride on the famous Ringstreet or Schönbrunn Palace,we will adapt your wishes.
+    Our tours are available every day, individual departure times.
+    Our Vienna City Tour is bookable for 4 or 6 hours, every additional hour is possible for 40 Euro extra charge.`,
     img: 'back1.jpg',
     price: 190,
-    priceList: ['190 Euro (bis zu 4 Personen) 4h', '250 Euro ( bis zu 7 Personen) 4h', '230 Euro ( bis zu 4  Personen) 6h', '325 Euro ( bis zu  7Personen)  6h']
+    priceList: ['190 Euro (up to 4 persons) for 4 hours', '250 Euro (up to 7 persons) for 4 hours', '230 Euro (up to 4 persons) for 6 hours', '325 Euro (up to 7 persons) for 6 hours']
   },
   {
-    title: 'Bratislava Tour – Foto Bratislava ',
-    desc: `Die slowakische Hauptstadt liegt nur eine kurze Fahrt von Wien entfernt. Erkunden Sie die nette Innenstadt, das Nationaltheater oder den Maximilianbrunnen wir stehen gerne beratend zur Seite und richten uns nach Ihren Wünschen.
-    Unsere Touren sind jeden Tag verfügbar,
-    die Abfahrtszeiten sprechen wir gerne mit Ihnen ab.
-    Die Bratislava Tour ist für 6 Stunden buchbar,
-    falls Sie verlängern möchten ist dies gerne um 40 Euro pro weiterer Stunde möglich.
-    `,
+    title: 'Bratislava Tour',
+    desc: `The Slovak capital is only a short drive from Vienna. 
+    Explore the nice city center, the National Theater or the Maximilianbrunnen we are more than happy to adivise you with suggestions.
+    Our tours are available every day, individual departure times.
+    Our Bratislava Tour is bookable for 6 hours, every additional hour is possible for 40 Euro extra charge.`,
     img: 'back2.jpg',
     price: 380,
-    priceList: ['380 Euro ( bis zu 4 Personen)', '430 Euro ( bis zu 7 Personen)']
+    priceList: ['380 Euro (up to 4 persons) for 6 hours', '430 Euro (up to 7 persons) for 6 hour']
   },
   {
-    title: 'Salzburg Tour- Foto Salzburg',
-    desc: `Bei diesem Tagesausflug entführen wir Sie in das wunderschöne Salzburg. Sie haben die Möglichkeit einige der beliebtesten Sehenswürdigkeiten wie Mozarts Geburtshaus, Schloss Mirabell und den Salzburger Dom zu besichtigen. 
-    Unsere Touren sind jeden Tag verfügbar,
-    die Abfahrtszeiten sprechen wir gerne mit Ihnen ab.
-    Die Salzburg Tour ist für 12 Stunden buchbar,
-    falls Sie verlängern möchten ist dies gerne um 40 Euro pro weiterer Stunde möglich.
-    `,
+    title: 'Salzburg Tour',
+    desc: `On this day trip you will discover the famous music city Salzburg.
+          You have the possibility to visit Mozart´s birth house, Mirabell Palace and the Salzburg Cathedral.
+          Our tours are available every day, individual departure times.
+          Our Vienna City Tour is bookable for 12 hours, every additional hour is possible for 40 Euro extra charge.`,
     img: 'back3.jpg',
     price: 650,
-    priceList: ['650 Euro ( bis zu 4 Personen)', '950 Euro ( bis zu 7 Personen)']
+    priceList: ['650 Euro (up to 4 persons) for 12 hours', '950 Euro (up to 7 persons) for 12 hours']
   },
   {
-    title: 'Hallstatt Tour – Foto Hallstatt',
-    desc: `Statten Sie dem berühmten UNESCO Weltkulturerbe Hallstatt einen Besuch ab.
-    Die Fahrt von Wien führt durch das wunderschöne Salzkammergut,
-    erleben Sie anschließend einen entspannten Tag bei toller Kulisse.
-    Unsere Touren sind jeden Tag verfügbar,
-    die Abfahrtszeiten sprechen wir gerne mit Ihnen ab.
-    Die Hallstatt Tour ist für 12 Stunden buchbar,
-    falls Sie verlängern möchten ist dies gerne um 40 Euro pro weiterer Stunde möglich.`,
+    title: 'Hallstatt Tour',
+    desc: `Visit the famous Unesco World Heritage Hallstatt. On your journey you will pass the picturesque Salzkammergut, in Hallstatt you can enjoy a relaxed day within a beautiful setting.
+Our tours are available every day, individual departure times.
+Our Vienna City Tour is bookable for 12 hours, every additional hour is possible for 40 Euro extra charge.`,
     img: 'back3.jpg',
     price: 650,
-    priceList: ['650 Euro ( bis zu 4 Personen)', '950 Euro ( bis zu 7 Personen)']
+    priceList: ['650 Euro (up to 4 persons) for 12 hours', '950 Euro (up to 7 persons) for 12 hours']
   },
 ]

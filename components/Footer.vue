@@ -4,7 +4,7 @@
   >
     <div class="flex flex-row justify-center mr-16 ml-4">
       <div class="h-32 w-1 bg-white mr-2"></div>
-      <div class="flex flex-col">
+      <div class="flex flex-col w-20">
         <a v-for="(link, index) in links" :key="index" :href="link.href">{{ link.display }}</a>
       </div>
     </div>

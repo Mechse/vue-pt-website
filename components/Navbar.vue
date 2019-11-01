@@ -1,6 +1,6 @@
 <template>
   <nav :class="navClass" class="w-full flex items-center text-gblue">
-    <div class="hidden md:flex items-center font-display">
+    <div class="hidden md:flex items-center font-display w-full">
       <img class="w-20 ml-8 my-4" src="~assets/img/logos/logo.svg" alt />
 
       <div class="ml-6 hover:text-lblue" v-for="(link, index) in links" :key="index">
@@ -19,6 +19,10 @@
           href="#contact"
           @click.prevent="scrollTo('#contact')"
         >Kontakt</a>
+      </div>
+      <div class="absolute right-0 mr-8">
+        <a href="#" @click.prevent="$i18n.locale='en'">English |</a>
+        <a href="#" @click.prevent="$i18n.locale='de'">German</a>
       </div>
     </div>
 

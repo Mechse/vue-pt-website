@@ -6,31 +6,25 @@
       <div v-if="direction" class="w-1/2">
         <h2 class="text-4xl m-2">{{ city }}</h2>
         <div class="bg-gblue h-2 w-16 ml-2"></div>
-        <p class="mt-4 text-lg mx-2 font-body font-light">
-          <slot></slot>
-        </p>
+        <p class="mt-4 text-lg mx-2 font-body font-light">{{ desc }}</p>
       </div>
       <!-- -->
-      <img class="w-1/2 px-12" :src="getImg(city)" alt />
+      <img class="w-1/2 px-12" :src="getImg(img)" alt />
       <!-- right -->
       <div v-if="!direction" class="w-1/2">
         <h2 class="text-4xl m-2">{{ city }}</h2>
         <div class="bg-gblue h-2 w-16 ml-2"></div>
-        <p class="mt-4 text-lg mx-2 font-body font-light">
-          <slot></slot>
-        </p>
+        <p class="mt-4 text-lg mx-2 font-body font-light">{{ desc }}</p>
       </div>
       <!-- -->
     </div>
     <!-- Mobile -->
     <div class="md:hidden flex w-full flex-wrap items-center">
-      <img :src="getImg(city)" alt />
+      <img :src="getImg(img)" alt />
       <div>
         <h2 class="text-4xl">{{ city }}</h2>
         <div class="bg-gblue h-2 w-16"></div>
-        <p class="mt-4 text-lg font-body font-light">
-          <slot></slot>
-        </p>
+        <p class="mt-4 text-lg font-body font-light">{{ desc }}</p>
       </div>
     </div>
   </div>
@@ -39,10 +33,10 @@
 <script>
 export default {
   name: 'CityDesc',
-  props: ['city', 'direction'],
+  props: ['city', 'direction', 'img', 'desc'],
   methods: {
     getImg(img) {
-      return require(`@/assets/img/${img}.png`)
+      return require(`@/assets/img/${img}`)
     }
   }
 }

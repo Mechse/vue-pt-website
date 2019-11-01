@@ -1,4 +1,4 @@
-// TODO dialog elements, impressum, english version
+// TODO impressum, turning text, english version, transfers google analytics, basic seo, lazy loading, vuex state management, arabic version, map
 <template>
   <div class="text-gblue">
     <CookieBanner></CookieBanner>
@@ -7,17 +7,13 @@
     </div>
     <div id="hero" class="flex md:px-24 px-12 flex-col justify-center">
       <h1 class="text-4xl md:text-6xl font-semibold leading-none">Passion Tours</h1>
-      <p class="text-2xl md:text-4xl mt-6">
-        Airport transfer
-        <br />and customized Tours.
-      </p>
+      <p class="text-2xl md:text-4xl mt-6">{{$t("index.hero-text")}}</p>
       <div class="mt-12 flex flex-wrap">
         <button
           class="w-48 max-w-md mt-4 sm:mt-0 btn-filled bg-lblue hover:border-lblue hover:text-lblue flex justify-center"
           href="#"
           @click.prevent="scrollTo('#contact')"
-        >Kontakt</button>
-
+        >{{$t("global.contact-btn")}}</button>
         <button
           class="hidden mt-4 w-64 sm:mt-0 sm:ml-4 btn-filled bg-gblue hover:border-gblue hover:text-gblue flex justify-center"
         >Anfrage</button>
@@ -27,31 +23,23 @@
       id="about-us"
       class="my-16 md:px-24 px-12 py-12 w-full bg-gblue text-white flex flex-col items-center"
     >
-      <h2 class="text-4xl">Über uns</h2>
-      <p class="text-lg text-center mt-4 font-body font-light my-6">
-        Unsere Firma besteht bereits seit 2004 und kann auf eine lange Erfahrung zurückgreifen.
-        Passion Tours möchten jedem die Möglichkeit bieten Sightseeing und Shopping nach ganz individuellen Wünschen zu gestalten. Mit uns erleben Sie einen ganz entspannten Tag das Tempo bestimmen Sie.
-        All unsere Touren sind private Touren je nach Personengröße fahren Sie mit einer unserer Mercedes-Limousinen inkl. Avantgardeausstattung.
-        Wir bieten außerdem exklusive Airport Transfers zum Fixpreis an.
-        Gerne erstellen wir für Sie maßgeschneiderte Touren und Ausflüge zu Ihren Wunschdestinationen.
-      </p>
+      <h2 class="text-4xl">{{$t("index.about-us-headline")}}</h2>
+      <p class="text-lg text-center mt-4 font-body font-light my-6">{{$t("index.about-us-text")}}</p>
     </div>
     <div id="places" class="md:px-24 px-12 mt-24">
-      <CityDesc city="Salzburg" direction="true">
-        Bei diesem Tagesausflug entführen wir Sie in das wunderschöne Salzburg.
-        Sie haben die Möglichkeit einige der beliebtesten Sehenswürdigkeiten wie Mozarts Geburtshaus, Schloss Mirabell und den Salzburger Dom zu besichtigen.
-        Unsere Touren sind jeden Tag verfügbar, die Abfahrtszeiten sprechen wir gerne mit Ihnen ab.
-      </CityDesc>
-      <CityDesc city="Wien">
-        Entdecken Sie unsere schöne Hauptstadt ganz entspannt in einer Mercedes Limousine und gewinnen Sie so einen tollen Überblick.
-        Ganz egal ob Sie mit einer Fahrt über die berühmte Ringstraße oder mit Schloss Schönbrunn starten möchten, wir richten uns nach Ihnen.
-        Unsere Touren sind jeden Tag verfügbar, die Abfahrtszeiten sprechen wir gerne mit Ihnen ab.
-      </CityDesc>
-      <CityDesc city="Bratislava" direction="true">
-        Die slowakische Hauptstadt liegt nur eine kurze Fahrt von Wien entfernt.
-        Erkunden Sie die nette Innenstadt, das Nationaltheater oder den Maximilianbrunnen wir stehen gerne beratend zur Seite und richten uns nach Ihren Wünschen.
-        Unsere Touren sind jeden Tag verfügbar, die Abfahrtszeiten sprechen wir gerne mit Ihnen ab.
-      </CityDesc>
+      <CityDesc
+        city="Salzburg"
+        direction="true"
+        img="Salzburg.png"
+        :desc="$t('index.salzburg-text')"
+      ></CityDesc>
+      <CityDesc city="Wien" img="Wien.png" :desc="$t('index.wien-text')" direction></CityDesc>
+      <CityDesc
+        city="Bratislava"
+        direction="true"
+        img="Bratislava.png"
+        :desc="$t('index.bratislava-text')"
+      ></CityDesc>
     </div>
     <div id="tours" class="w-full flex flex-col bg-gray-200 md:px-24 p-12 mt-12">
       <div class="md:mt-8"></div>
@@ -60,7 +48,13 @@
         <h3 class="text-4xl font-semibold">Unsere Touren</h3>
       </div>
       <!-- -->
-      <Carousel id="tours" v-bind:tours="toursInfo" v-on:show-tour="showModal($event)"></Carousel>
+      <!-- -->
+      <Carousel
+        :key="carouselComponentKey"
+        id="tours"
+        @show-tour="showModal($event)"
+        :tours="toursInfo"
+      ></Carousel>
     </div>
     <Contact id="contact"></Contact>
   </div>
@@ -72,7 +66,10 @@ import Carousel from '../components/Carousel'
 import Contact from '../components/Contact'
 import Modal from '../components/Modal'
 import CookieBanner from '../components/CookieBanner'
-import * as Tours from '../static/tours'
+import * as deTours from '../static/touren'
+import * as enTours from '../static/tours'
+
+// this.$i18n.locale
 
 export default {
   name: 'Home',
@@ -85,9 +82,11 @@ export default {
   },
   data() {
     return {
-      toursInfo: Tours,
+      enTourInfo: enTours,
+      deTourInfo: deTours,
       activeTour: {},
-      modalHideClass: true
+      modalHideClass: true,
+      carouselComponentKey: 0
     }
   },
   methods: {
@@ -105,6 +104,26 @@ export default {
     hideModal() {
       this.modalHideClass = true
       this.activeTour = {}
+    }
+  },
+  computed: {
+    lang() {
+      return this.$i18n.locale
+    },
+    toursInfo() {
+      if (this.lang === 'en') {
+        return this.enTourInfo
+      } else if (this.lang === 'de') {
+        return this.deTourInfo
+      } else {
+        return this.enTourInfo
+      }
+    }
+  },
+  watch: {
+    lang: function() {
+      console.log('WATCHER')
+      this.carouselComponentKey += 1
     }
   }
 }
