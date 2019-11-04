@@ -17,6 +17,7 @@ export default {
     this.$nextTick(() => {
       const attributes = `© <a href="https://www.mapbox.com/map-feedback/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>`
       const myMap = L.map('map').setView([48.21, 16.36], 11)
+      myMap.scrollWheelZoom.disable()
       const tiles = L.tileLayer(this.url, {
         tileSize: 512,
         zoomOffset: -1,

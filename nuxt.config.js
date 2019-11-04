@@ -4,7 +4,7 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || '',
+    title: process.env.npm_package_name || 'Passion Tours',
     meta: [{
         charset: 'utf-8'
       },
@@ -15,7 +15,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
+        content: process.env.npm_package_description || 'Passion Tours - Airport transfer and customized Tours.'
       }
     ],
     link: [{
@@ -45,6 +45,7 @@ export default {
   css: [],
   /*
    ** Plugins to load before mounting the App
+   UA - 151465063 - 1
    */
   plugins: [
     '~/plugins/i18n.js',
@@ -63,6 +64,9 @@ export default {
   buildModules: [
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-151465063-1'
+    }]
   ],
   /*
    ** Nuxt.js modules
