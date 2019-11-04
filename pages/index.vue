@@ -1,4 +1,4 @@
-// TODO transfers, google analytics, basic seo, lazy loading, vuex state management, arabic version, map
+// TODO transfers, google analytics, basic seo, lazy loading, vuex state management, arabic version
 <template>
   <div class="text-gblue">
     <CookieBanner></CookieBanner>
