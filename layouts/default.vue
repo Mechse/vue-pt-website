@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Navbar :links="Links"></Navbar>
+    <Navbar :links="Links" :key="navbarComponentKey"></Navbar>
     <nuxt />
     <Footer :links="Links"></Footer>
   </div>
@@ -17,11 +17,16 @@ export default {
   },
   data() {
     return {
-      Links: [
-        { href: '#hero', display: 'Home' },
-        { href: '#about-us h2', display: 'About Us' },
-        { href: '#places', display: 'Orte' },
-        { href: '#tours', display: 'Touren' }
+      navbarComponentKey: 0
+    }
+  },
+  computed: {
+    Links() {
+      return [
+        { href: '#hero', display: this.$t('nav.home-text') },
+        { href: '#about-us h2', display: this.$t('nav.about-us-text') },
+        { href: '#places', display: this.$t('nav.places-text') },
+        { href: '#tours', display: this.$t('nav.tours-text') }
       ]
     }
   }

@@ -31,6 +31,13 @@ export default ({
           "bratislava-text": `Die slowakische Hauptstadt liegt nur eine kurze Fahrt von Wien entfernt.
             Erkunden Sie die nette Innenstadt,
             das Nationaltheater oder den Maximilianbrunnen wir stehen gerne beratend zur Seite und richten uns nach Ihren Wünschen.`,
+        },
+        "nav": {
+          "home-text": "Home",
+          "about-us-text": "Über uns",
+          "places-text": "Orte",
+          "tours-text": "Touren",
+          "contact-text": "Kontakt"
         }
       },
       'en': {
@@ -54,6 +61,13 @@ export default ({
           "bratislava-text": `The Slovak capital is only a short drive from Vienna. 
             Explore the nice city center,
             the National Theater or the Maximilianbrunnen we are more than happy to adivise you with suggestions.`,
+        },
+        "nav": {
+          "home-text": "Home",
+          "about-us-text": "About us",
+          "places-text": "Places",
+          "tours-text": "Tours",
+          "contact-text": "Contact"
         }
       },
     },

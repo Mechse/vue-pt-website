@@ -1,27 +1,30 @@
-// TODO impressum, turning text, english version, transfers google analytics, basic seo, lazy loading, vuex state management, arabic version, map
+// TODO transfers, google analytics, basic seo, lazy loading, vuex state management, arabic version, map
 <template>
   <div class="text-gblue">
     <CookieBanner></CookieBanner>
     <div :class="{hidden: modalHideClass}" v-if="activeTour">
       <Modal v-on:hide-tour="hideModal()" :activeTour="activeTour"></Modal>
     </div>
-    <div id="hero" class="flex md:px-24 px-12 flex-col justify-center">
-      <h1 class="text-4xl md:text-6xl font-semibold leading-none">Passion Tours</h1>
-      <p class="text-2xl md:text-4xl mt-6">{{$t("index.hero-text")}}</p>
-      <div class="mt-12 flex flex-wrap">
-        <button
-          class="w-48 max-w-md mt-4 sm:mt-0 btn-filled bg-lblue hover:border-lblue hover:text-lblue flex justify-center"
-          href="#"
-          @click.prevent="scrollTo('#contact')"
-        >{{$t("global.contact-btn")}}</button>
-        <button
-          class="hidden mt-4 w-64 sm:mt-0 sm:ml-4 btn-filled bg-gblue hover:border-gblue hover:text-gblue flex justify-center"
-        >Anfrage</button>
+    <div id="hero" class="flex md:px-24 px-8 justify-center items-center">
+      <div class="md:w-1/2 w-full">
+        <h1 class="text-4xl md:text-6xl font-semibold leading-none">Passion Tours</h1>
+        <p class="text-2xl md:text-4xl mt-6">{{$t("index.hero-text")}}</p>
+        <div class="mt-12 flex flex-wrap">
+          <button
+            class="w-48 max-w-md mt-4 sm:mt-0 btn-filled bg-lblue hover:border-lblue hover:text-lblue flex justify-center"
+            href="#"
+            @click.prevent="scrollTo('#contact')"
+          >{{$t("global.contact-btn")}}</button>
+          <button
+            class="hidden mt-4 w-64 sm:mt-0 sm:ml-4 btn-filled bg-gblue hover:border-gblue hover:text-gblue flex justify-center"
+          >Anfrage</button>
+        </div>
       </div>
+      <Map class="hidden md:block w-1/2 h-1/2 overflow-hidden"></Map>
     </div>
     <div
       id="about-us"
-      class="my-16 md:px-24 px-12 py-12 w-full bg-gblue text-white flex flex-col items-center"
+      class="md:px-24 px-12 py-12 w-full bg-gblue text-white flex flex-col items-center"
     >
       <h2 class="text-4xl">{{$t("index.about-us-headline")}}</h2>
       <p class="text-lg text-center mt-4 font-body font-light my-6">{{$t("index.about-us-text")}}</p>
@@ -66,6 +69,7 @@ import Carousel from '../components/Carousel'
 import Contact from '../components/Contact'
 import Modal from '../components/Modal'
 import CookieBanner from '../components/CookieBanner'
+import Map from '../components/Map'
 import * as deTours from '../static/touren'
 import * as enTours from '../static/tours'
 
@@ -78,7 +82,8 @@ export default {
     Carousel,
     Contact,
     CookieBanner,
-    Modal
+    Modal,
+    Map
   },
   data() {
     return {
@@ -131,7 +136,7 @@ export default {
 
 <style scoped>
 #hero {
-  height: 90vh;
+  height: 100vh;
 }
 #tours {
   height: 70vh;

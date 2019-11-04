@@ -18,7 +18,7 @@
           class="text-lg font-semibold"
           href="#contact"
           @click.prevent="scrollTo('#contact')"
-        >Kontakt</a>
+        >{{ this.$t('nav.contact-text') }}</a>
       </div>
       <div class="absolute right-0 mr-8">
         <a href="#" @click.prevent="$i18n.locale='en'">English |</a>
@@ -75,7 +75,7 @@
           <a class="text-lg" :href="link.href">{{ link.display }}</a>
         </div>
         <div class="pl-4 py-4 w-full cursor-pointer active:bg-blue-200">
-          <a class="text-lg" href="#">Kontakt</a>
+          <a class="text-lg" href="#">{{ this.$t('nav.contact-text') }}</a>
         </div>
       </div>
       <!-- -->
@@ -92,7 +92,7 @@ export default {
         'bg-white': false,
         'bg-transparent': true,
         'z-0': true,
-        'z-10': false,
+        'z-10000': false,
         'shadow-lg': false,
         fixed: false
       },
@@ -105,14 +105,14 @@ export default {
       if (window.scrollY > 50) {
         this.navClass['bg-transparent'] = false
         this.navClass['bg-white'] = true
-        this.navClass['z-10'] = true
+        this.navClass['z-10000'] = true
         this.navClass['z-0'] = false
         this.navClass.fixed = true
         this.navClass['shadow-lg'] = true
       } else {
         this.navClass['bg-transparent'] = true
         this.navClass['bg-white'] = false
-        this.navClass['z-10'] = false
+        this.navClass['z-10000'] = false
         this.navClass['z-0'] = true
         this.navClass.fixed = true
         this.navClass['shadow-lg'] = false
@@ -141,5 +141,8 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.z-10000 {
+  z-index: 10000 !important;
+}
 </style>

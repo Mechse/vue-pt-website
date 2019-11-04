@@ -46,10 +46,17 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/i18n.js', {
-    src: '~/plugins/VueCarousel',
-    ssr: false
-  }],
+  plugins: [
+    '~/plugins/i18n.js',
+    {
+      src: '~/plugins/VueCarousel',
+      ssr: false
+    },
+    {
+      src: '~plugins/mapbox.js',
+      ssr: false
+    }
+  ],
   /*
    ** Nuxt.js dev-modules
    */
