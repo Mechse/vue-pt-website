@@ -1,4 +1,4 @@
-// TODO transfers, google analytics, ssl, lazy loading, vuex state management, arabic version
+// TODO transfers, google analytics, ssl, lazy loading, vuex state management, arabic version, animations [menu,]
 <template>
   <div class="text-gblue">
     <CookieBanner></CookieBanner>

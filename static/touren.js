@@ -8,7 +8,7 @@ module.exports = [{
       Die Wien Tour ist für 4 oder 6 Stunden buchbar,
       falls Sie verlängern möchten ist dies gerne um 40 Euro pro weiterer Stunde möglich.
     `,
-    img: 'back1.jpg',
+    img: 'tours/Wien.jpg',
     price: 190,
     priceList: ['190 Euro (bis zu 4 Personen) 4h', '250 Euro ( bis zu 7 Personen) 4h', '230 Euro ( bis zu 4  Personen) 6h', '325 Euro ( bis zu  7Personen)  6h']
   },
@@ -20,7 +20,7 @@ module.exports = [{
     Die Bratislava Tour ist für 6 Stunden buchbar,
     falls Sie verlängern möchten ist dies gerne um 40 Euro pro weiterer Stunde möglich.
     `,
-    img: 'back2.jpg',
+    img: 'tours/Bratislava.jpg',
     price: 380,
     priceList: ['380 Euro ( bis zu 4 Personen)', '430 Euro ( bis zu 7 Personen)']
   },
@@ -32,7 +32,7 @@ module.exports = [{
     Die Salzburg Tour ist für 12 Stunden buchbar,
     falls Sie verlängern möchten ist dies gerne um 40 Euro pro weiterer Stunde möglich.
     `,
-    img: 'back3.jpg',
+    img: 'tours/Salzburg.jpg',
     price: 650,
     priceList: ['650 Euro ( bis zu 4 Personen)', '950 Euro ( bis zu 7 Personen)']
   },
@@ -45,7 +45,7 @@ module.exports = [{
     die Abfahrtszeiten sprechen wir gerne mit Ihnen ab.
     Die Hallstatt Tour ist für 12 Stunden buchbar,
     falls Sie verlängern möchten ist dies gerne um 40 Euro pro weiterer Stunde möglich.`,
-    img: 'back3.jpg',
+    img: 'tours/Hallstatt.jpg',
     price: 650,
     priceList: ['650 Euro ( bis zu 4 Personen)', '950 Euro ( bis zu 7 Personen)']
   },
